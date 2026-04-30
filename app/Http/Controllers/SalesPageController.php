@@ -28,6 +28,8 @@ class SalesPageController extends Controller
         Nama: " . $request->product_name . "
         Deskripsi & Keunggulan: " . $request->product_description . "
         
+        PENTING: Kamu WAJIB menulis seluruh hasil konten (headline, sub_headline, description, dll) dalam BAHASA YANG SAMA PERSIS dengan bahasa yang digunakan user pada 'Deskripsi & Keunggulan' di atas (Jika Inggris balas Inggris, jika Indonesia balas Indonesia).
+        
         Analisis data di atas, lalu hasilkan output HANYA dalam format JSON murni dengan struktur persis seperti ini:
         {
             \"headline\": \"...\",
@@ -44,7 +46,7 @@ class SalesPageController extends Controller
             ->post('https://api.groq.com/openai/v1/chat/completions', [
                 'model' => 'llama-3.1-8b-instant',
                 'messages' => [
-                    ['role' => 'system', 'content' => 'You are a helpful expert in copywriting. Output only raw valid JSON.'],
+                    ['role' => 'system', 'content' => 'You are a helpful expert in copywriting. Output only raw valid JSON. Respond in the exact same language as the user input.'],
                     ['role' => 'user', 'content' => $prompt]
                 ],
                 'temperature' => 0.7
