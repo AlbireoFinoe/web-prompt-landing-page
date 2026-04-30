@@ -3,7 +3,7 @@
         $content = $salesPage->generated_content;
         $theme = $salesPage->theme ?? 'blue';
         
-        // Pemetaan warna berdasarkan tema
+        // Color mapping based on theme
         $themes = [
             'blue' => [
                 'bg' => 'from-slate-900 to-slate-800',
@@ -45,12 +45,12 @@
             <div class="mb-8 flex justify-between items-center">
                 <a href="{{ route('sales.create') }}" class="inline-flex items-center text-sm font-medium text-slate-500 hover:{{ $active['text_accent'] }} transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                    Kembali ke Form
+                    Back to Form
                 </a>
                 
                 <a href="{{ route('sales.download', $salesPage->id) }}" class="bg-emerald-600 text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-emerald-700 transition-colors shadow-md flex items-center">
                     <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    Export ke HTML
+                    Export to HTML
                 </a>
             </div>
 
@@ -62,16 +62,16 @@
 
                         <div class="relative z-10 max-w-4xl mx-auto text-center">
                             <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-white text-sm font-semibold tracking-wider mb-6 border border-white/20">
-                                ✨ PENAWARAN EKSKLUSIF
+                                ✨ EXCLUSIVE OFFER
                             </span>
                             <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
-                                {{ $content['headline'] ?? 'Headline Utama' }}
+                                {{ $content['headline'] ?? 'Main Headline' }}
                             </h1>
                             <p class="text-xl md:text-2xl text-slate-300 mb-10 font-light leading-relaxed">
-                                {{ $content['sub_headline'] ?? 'Sub-headline pendukung.' }}
+                                {{ $content['sub_headline'] ?? 'Supporting sub-headline goes here.' }}
                             </p>
                             <button class="{{ $active['button'] }} text-white font-bold py-4 px-10 rounded-full transition transform duration-300 hover:-translate-y-1 text-lg">
-                                {{ $content['call_to_action'] ?? 'Beli Sekarang' }}
+                                {{ $content['call_to_action'] ?? 'Buy Now' }}
                             </button>
                         </div>
                     </div>
@@ -95,9 +95,9 @@
 
                     <div class="py-24 px-8 md:px-16 max-w-6xl mx-auto">
                         <div class="mb-20 text-center">
-                            <h2 class="text-3xl font-bold text-slate-800 mb-6">Mengapa Ini Penting Untuk Anda?</h2>
+                            <h2 class="text-3xl font-bold text-slate-800 mb-6">Why Is This Important For You?</h2>
                             <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
-                                {{ $content['description'] ?? 'Deskripsi produk' }}
+                                {{ $content['description'] ?? 'Product description' }}
                             </p>
                         </div>
 
@@ -105,7 +105,7 @@
                             <div class="lg:col-span-3">
                                 <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center">
                                     <svg class="w-6 h-6 {{ $active['text_accent'] }} mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                                    Fitur & Manfaat Utama
+                                    Key Features & Benefits
                                 </h3>
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     @if(isset($content['features']) && is_array($content['features']))
@@ -126,14 +126,14 @@
                                 <div class="bg-gradient-to-br {{ $active['price_bg'] }} rounded-3xl p-8 text-white shadow-xl relative overflow-hidden">
                                     <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-white opacity-10 rounded-full blur-xl"></div>
                                     
-                                    <h3 class="text-sm font-bold {{ $active['price_text'] }} uppercase tracking-widest mb-4">Investasi Anda</h3>
+                                    <h3 class="text-sm font-bold {{ $active['price_text'] }} uppercase tracking-widest mb-4">Your Investment</h3>
                                     <div class="flex items-baseline gap-2 mb-2">
                                         <span class="text-5xl font-black tracking-tight">{{ $content['pricing']['price'] ?? '' }}</span>
                                     </div>
                                     <p class="{{ $active['price_text'] }} mb-8 font-medium">{{ $content['pricing']['nb'] ?? '' }}</p>
                                     
                                     <button class="w-full bg-white {{ $active['price_btn_text'] }} font-bold py-4 px-6 rounded-xl hover:bg-slate-50 transition-colors shadow-lg flex justify-center items-center group">
-                                        {{ $content['call_to_action'] ?? 'Ambil Penawaran' }}
+                                        {{ $content['call_to_action'] ?? 'Claim Offer' }}
                                         <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                     </button>
                                 </div>
@@ -168,8 +168,8 @@
                         <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
                             <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Terjadi Kesalahan</h3>
-                        <p class="text-slate-500">Maaf, AI gagal memproses format data. Silakan kembali dan coba lagi.</p>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Something Went Wrong</h3>
+                        <p class="text-slate-500">Sorry, the AI failed to process the data format. Please go back and try again.</p>
                     </div>
                 @endif
             </div>
